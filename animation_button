@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Button</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #e0f7fa, #abc6e8);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .animated-btn {
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #0075d4;
+      border: 2px solid transparent;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      animation: pulse 2s infinite;
+      box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+    }
+
+    .animated-btn:hover {
+      background-color: #0054a7;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      box-shadow: 0 6px 15px rgba(0, 150, 136, 0.4);
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(0, 188, 212, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 188, 212, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="animated-btn">Click Me</button>
+
+</body>
+</html>

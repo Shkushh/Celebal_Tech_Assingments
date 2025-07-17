@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ebecbc;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+    .form-container {
+      background-color: rgb(215, 222, 237);
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    button[type="reset"] {
+      background-color: #3678f4;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="form-container">
+    <h2>Register</h2>
+
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+
+    <div class="form-group">
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" required />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 9876543210" required />
+    </div>
+
+    <div class="button-group">
+      <button type="submit">Submit</button>
+      <button type="reset">Cancel</button>
+    </div>
+  </form>
+
+</body>
+</html>

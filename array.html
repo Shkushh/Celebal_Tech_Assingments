@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>First Element(s) of Array</title>
+</head>
+<body>
+
+  <h3>Enter array values (comma-separated):</h3>
+  <input type="text" id="arrayInput" placeholder="e.g. 7, 9, 0, -2"><br>
+
+  <h3>Enter number of elements (optional):</h3>
+  <input type="number" id="nInput" placeholder="e.g. 3"><br><br>
+
+  <button onclick="getFirst()">Get First</button>
+
+  <p><strong>Result:</strong> <span id="result"></span></p>
+
+  <script>
+    function first(arr, n) {
+      if (!Array.isArray(arr)) return [];
+      if (n === undefined || n === '') return arr[0];
+      if (n < 0) return [];
+      return arr.slice(0, n);
+    }
+
+    function getFirst() {
+      const arrStr = document.getElementById('arrayInput').value;
+      const n = parseInt(document.getElementById('nInput').value);
+      const arr = arrStr.split(',').map(x => Number(x.trim()));
+      
+      const output = isNaN(n) ? first(arr) : first(arr, n);
+      document.getElementById('result').innerText = Array.isArray(output) ? JSON.stringify(output) : output;
+    }
+  </script>
+
+</body>
+</html>
+

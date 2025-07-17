@@ -1,0 +1,72 @@
+# Git Commands Cheat Sheet for Common Scenarios
+
+1. Stage All Changes and Commit with a Message:
+------------------------------------------------
+git add .
+git commit -m "Add/update [your meaningful message here]"
+
+2. Move Commits to the Correct Branch:
+--------------------------------------
+# Suppose you're on the wrong branch (e.g., main)
+git checkout -b correct-branch
+# Commits are now on correct-branch
+
+# Go back to main and remove wrong commits
+git checkout main
+git reset --hard HEAD~n        # n = number of wrong commits
+# Or reset to remote main
+git reset --hard origin/main
+
+3. Create New Branch, Commit Changes, Push:
+-------------------------------------------
+git checkout main
+git pull
+git checkout -b new-feature
+# Make changes
+git add .
+git commit -m "Add feature: description"
+git push -u origin new-feature
+
+4. Contribute to Open Source (Fork, PR):
+----------------------------------------
+# Fork on GitHub, then:
+git clone https://github.com/your-username/repo-name.git
+cd repo-name
+git checkout -b fix-issue
+# Make changes
+git add .
+git commit -m "Fix: issue"
+git push -u origin fix-issue
+# Then open a pull request on GitHub
+
+5. Resolve Merge Conflicts:
+---------------------------
+git checkout main
+git pull
+git checkout your-branch
+git merge main
+# Fix conflicts manually
+git add .
+git commit -m "Resolve merge conflicts with main"
+
+6. Create Feature Branch from Latest Main:
+------------------------------------------
+git checkout main
+git pull
+git checkout -b new-feature
+
+7. Revert to a Specific Commit:
+-------------------------------
+git log                         # Get commit hash
+git reset --hard abc1234       # Replace with actual hash
+
+8. Restore Deleted File After Commit:
+-------------------------------------
+# If already committed:
+git checkout HEAD^ -- path/to/deleted-file
+git add path/to/deleted-file
+git commit -m "Restore deleted file"
+
+# If staged but not committed:
+git restore --staged path/to/file
+git restore path/to/file
